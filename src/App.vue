@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navigation v-bind:nav="nav"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navigation from '@/components/Navigation'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      nav: {
+        listItem : [
+          {id: 1, title: 'Главная'},
+          {id: 2, title: 'Меню'},
+          {id: 3, title: 'Забронировать'},
+          {id: 4, title: 'Контакты'}
+        ]
+      }
+    }
+  },
   components: {
-    HelloWorld
+    Navigation
   }
 }
 </script>
