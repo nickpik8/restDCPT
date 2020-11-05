@@ -1,6 +1,11 @@
 <template>
     <nav>
-        <NavItem v-bind:list="nav.listItem"/>
+        <ul>
+            <NavItem   
+            v-for="item in nav.listItem" :key="item.id"
+            v-bind:item="item"
+            />
+        </ul>
     </nav>
 </template>
 <script>
@@ -17,5 +22,19 @@ export default {
 </script>
 
 <style scoped>
-
+    nav{
+        border-bottom: 1px solid #888;
+        margin-top: 2rem;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        justify-content: flex-end;
+    }
+    @media (min-width: 768px){
+        ul{
+            flex-direction: row;
+        }
+    }
 </style>

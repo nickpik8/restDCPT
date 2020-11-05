@@ -1,18 +1,24 @@
 <template>
-    <div>
-        <div  v-for="item in list" :key="item.id">
+    <li class="m-2">
+        <a :href="item.href">
             {{ item.title }}
-        </div>
-    </div>
+        </a>
+    </li>
 </template>
 <script>
 export default {
     name: 'NavItem',
     props: {
-        list : Array
+        item : Object
     }
 }
 </script>
 <style scoped>
-
+    a{
+        color: #333;
+    }
+    a:hover{
+        color: #888;
+        transition: color .5s;
+    }
 </style>
