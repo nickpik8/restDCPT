@@ -1,15 +1,16 @@
 <template>
-    <canvas ref="canvas" width="600px" height="500px" @:onload="load">
-    </canvas>
+    <Draw
+
+    />
 </template>
 <script>
+import Draw from '@/components/Draw';
 export default {
-    methods : {
-        load: function(){
-            let ctx = this.$refs.canvas.getContext('2d');
-            ctx.fillStyle = "green";
-            ctx.fillRect(10, 10, 100, 100);
-        }
+    methods: {
+      
+    },
+    components: {
+        Draw
     }
 }
 </script>

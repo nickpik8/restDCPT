@@ -1,10 +1,10 @@
 <template>
-    <div class="menu-item m-1">
+    <div class="menu-item m-1" v-on:click="alert('sda')">
         <img class="menu-item_img" :src="item.img"/>
-        <div class="menu-item_title">
+        <h4 class="menu-item_title">
             {{ item.title }}
-        </div>
-        <div class="menu-item_description">
+        </h4>
+        <div class="menu-item_description" >
             {{ item.description }}
         </div>
     </div>
@@ -21,7 +21,11 @@ export default {
 
 <style scoped>
 .menu-item{
+    display: flex;
+    flex-direction: column;
     flex-basis: 100%;
+    justify-content: start;
+    align-items: stretch;
     border: 1px dashed #888;
 }
 @media (min-width: 400px){
@@ -39,13 +43,17 @@ export default {
         flex-basis: 20%;
     }
 }
-.menu-item_title{
-    font-weight: 700;
-}
 .menu-item_img{
     width:100%;
     border-bottom: 1px solid #888;
     min-height: 14rem;
+}
+.menu-item_title{
+    font-weight: 700;
+    background-color: #e8e8e8;
+    height: 2.5rem;
+    margin: 0;
+    padding-top: 1rem;
 }
 .menu-item_description{
     padding: .5rem;

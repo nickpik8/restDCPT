@@ -1,8 +1,8 @@
 <template>
     <li class="m-2">
-        <a :href="item.href">
+        <router-link to="item.href">
             {{ item.title }}
-        </a>
+        </router-link>
     </li>
 </template>
 <script>
