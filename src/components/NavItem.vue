@@ -1,6 +1,6 @@
 <template>
     <li class="m-2">
-        <router-link to="item.href">
+        <router-link :to="item.href">
             {{ item.title }}
         </router-link>
     </li>

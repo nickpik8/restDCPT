@@ -1,9 +1,14 @@
 <template>
-    <canvas ref="canvas" :width="widthCanvas" :height="heightCanvas">
+    <canvas ref="canvas" :width="widthCanvas" :height="heightCanvas" v-on:click="clickCanvas($event)">
     </canvas>
 </template>
 <script>
 export default {
+    data: function(){
+        return {
+            range: []
+        }
+    },
     methods : {
         draw: function(){ 
             let ctx = this.$refs.canvas.getContext('2d');
@@ -29,6 +34,9 @@ export default {
             ctx.strokeRect(bx + 176, y - by - 100, 100, 200);
             ctx.strokeRect(bx + 298, y - by - 100, 150, 200);
             ctx.strokeRect(bx + 503, y - by - 100, 150, 200);
+        },
+        clickCanvas(event){
+            
         }
     },
     computed:{

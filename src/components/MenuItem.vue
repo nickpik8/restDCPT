@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-item m-1" v-on:click="alert('sda')">
+    <div class="menu-item m-1" v-on:click="clicked">
         <img class="menu-item_img" :src="item.img"/>
         <h4 class="menu-item_title">
             {{ item.title }}
@@ -15,6 +15,11 @@ export default {
     name: "MenuItem",
     props: {
         item: Object
+    },
+    methods: {
+        clicked() {
+            return alert("OK");
+        }
     }
 }
 </script>
